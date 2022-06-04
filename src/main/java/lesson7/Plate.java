@@ -19,4 +19,8 @@ public class Plate {
     public int getCountFood() {
         return this.countFood;
     }
+
+    public void additionFood(int countFood) {
+        this.countFood+=countFood;
+    }
 }

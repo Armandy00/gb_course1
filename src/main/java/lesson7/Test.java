@@ -4,6 +4,7 @@ public class Test {
     public static void main(String[] args) throws InterruptedException {
 
         boolean isFood = true;
+        int strategicFoodforPlates = 50;
 
         Cat[] cats = {
                 new Cat("Ричард", 50),
@@ -26,9 +27,19 @@ public class Test {
                         cat.satietyInfo();
                         Thread.sleep(1000);
                     } else {
-                        System.out.println("В мисках закончилась еда");
-                        isFood = false;
-                        break;
+                        if (strategicFoodforPlates > 0) {
+                            System.out.println("------------------------------------------------\n" +
+                                    "Пришла пора стратегического запаса корма\n" +
+                                    "-------------------------------------------------------");
+                            for (Plate plate : plates) {
+                                plate.additionFood(strategicFoodforPlates);
+                            }
+                            strategicFoodforPlates = 0;
+                        } else {
+                            System.out.println("В мисках закончилась еда");
+                            isFood = false;
+                            break;
+                        }
                     }
                 } else {
                     countsNotHungry++;
