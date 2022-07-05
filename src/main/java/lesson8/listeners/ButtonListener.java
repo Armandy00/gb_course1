@@ -16,10 +16,9 @@ public class ButtonListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton btn = (JButton) e.getSource();
-        if (inputField.getText().length()>0 && Character.isDigit(inputField.getText().charAt(inputField.getText().length()-1))) {
+        if (inputField.getText().length() > 0 && Character.isDigit(inputField.getText().charAt(inputField.getText().length() - 1))) {
             inputField.setText(inputField.getText() + btn.getText());
-        }
-        else {
+        } else {
             inputField.setText(btn.getText());
         }
 

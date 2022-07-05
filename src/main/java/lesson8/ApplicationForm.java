@@ -47,7 +47,7 @@ public class ApplicationForm extends JFrame {
         menuFile.add(new JMenuItem("Clear"));
         JMenuItem exitItem = menuFile.add(new JMenuItem("Exit"));
         menuBar.add(exitItem);
-        //прописываем реакцию на кнопку Экзит - через создание класса
+        //прописываем реакцию на кнопку Экзит - через создание вложенного класса
         exitItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -136,7 +136,6 @@ public class ApplicationForm extends JFrame {
 
         return digitsPanel;
     }
-
 
 
 }
